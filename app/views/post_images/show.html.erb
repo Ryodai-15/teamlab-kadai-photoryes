@@ -1,5 +1,6 @@
 <div>
   <%= attachment_image_tag @post_image, :image %>
+  <p>投稿ユーザー画像：<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></p>
   <p>投稿タイトル：<%= @post_image.photo_name %></p>
   <p>説明：<%= @post_image.caption %></p>
   <p>ユーザーネーム：<%= @post_image.user.name %></p>
