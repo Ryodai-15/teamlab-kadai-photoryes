@@ -1,3 +1,11 @@
-<h3>画像投稿編集フォーム</h3>
-<%= render 'layouts/errors' , obj: @post_image %>
-<%= render 'form', post_image: @post_image %>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light p-4 mb-0">画像投稿編集フォーム</h5>
+      <div class="form-body p-4">
+        <%= render 'layouts/errors' , obj: @post_image %>
+        <%= render 'form', post_image: @post_image %>
+      </div>
+    </div>
+  </div>
+</div>
