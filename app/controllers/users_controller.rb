@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @post_images = PostImage.page(params[:page]).per(3)
+    @post_images = @user.post_images.page(params[:page]).per(3)
   end
   
   def edit
@@ -11,8 +11,11 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)  
+    if @user.update(user_params)
+      redirect_to user_path(@user.id) 
+    else
+      render :edit
+    end
   end
   
   private

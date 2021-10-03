@@ -9,5 +9,8 @@ class User < ApplicationRecord
 
   attachment :profile_image
   # モデルに、画像アップ用のメソッド（attachment）を追加してフィールド名に（profile_image）を指定
+  
+  validates :name, presence: true
+  # nameカラムに空白禁止のバリデーションを指定
 
 end
